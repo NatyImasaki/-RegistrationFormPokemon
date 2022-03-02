@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Varela+Round&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+
+form {
+    width: 50%; 
+    height: auto;
+    margin: 80px 0 80px 0;
+    border: 3px solid #fa9d08;
+    border-radius: 10px;
+    padding: 36px;
+    background: #fdedd6;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+.grupo {
+    border: 0;
+}
+
+.titulo {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Righteous', cursive;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: #14213D;
+}
+
+p {
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 400;
+    margin-bottom: 32px;
+    color: #fa9d08;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+.campo input { 
+    height: 35px;
+    margin-bottom: 20px;
+    padding-left: 8px;
+    border: 1px solid #fa9d08;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+}
+
+.campo label {
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: #14213D;
+}
+
+span {
+    color: red;
+}
+
+legend {
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #14213D;
+}
+
+.genero input {
+    margin-bottom: 20px;   
+}
+
+.genero label {
+    margin-right: 10px;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #14213D;
+}
+
+.opcao-nature {
+    width: 30%;
+    height: 30px;
+    margin-bottom: 20px;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #14213D;
+    border: 1px solid #fa9d08;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+}
+
+.opcao-tipo {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 150px;
+}
+
+.opcao-tipo label {
+    margin-right: 20px;
+    margin-bottom: 18px;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #14213D;
+}
+
+.opcao-tipo input {
+    margin-right: 4px;
+}
+
+img {
+    width: 18px;
+    margin-left: 5px;   
+}
+
+.div-botao {
+    text-align: center;
+}
+
+.botao {
+    width: 300px;
+    height: 40px;
+    margin-top: 20px;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    color: #14213D;
+    border: 1px solid #fa9d08;
+    border-radius: 5px;
+    background: #f8df8d;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+}
+
+input::placeholder {
+    color: #a8a8a8;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+   }
+
+.campo input:focus, .opcao-nature:focus {
+    background: #f8df8d;
+}
+
+.botao:hover {
+    background:#f8e8ae;
+    box-shadow: inset 2px 2px 5px rgb(0, 0, 0, 0.2);
+    text-shadow: none;
+    cursor: pointer;
+}
+
+.botao:active {
+    background:#f7d463; ;
+}
+
+.opcao-nature:hover {
+    cursor: pointer;
+}

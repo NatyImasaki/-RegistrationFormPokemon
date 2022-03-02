@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre seu Pokemon</title>
+    <meta name="description" content="Com esta formulário você pode cadastrar todas as informações sobre seus Pokemon">
+    <link rel="stylesheet" href="form_style.css">
+</head>
+<body> 
+    
+    <form>
+        <div class="titulo">
+            <h1>Cadastro de Pokemon</h1>
+            <p>Insira as informações sobre seu Pokemon</p>
+        </div>
+
+        <fieldset class="grupo">
+            <div class="campo">
+                <label for="nome">Nome<span class="obrigatorio">*</span></label>
+                <input type="text" name="nome" required placeholder="Insira o nome do seu Pokemon">
+            </div>
+
+            <div class="campo">
+                <label for="apelido">Apelido</label>
+                <input type="text" name="apelido" placeholder="Insira o apelido do seu Pokemon">
+            </div>
+
+            <div class="campo">
+                <label for="level">Level<span class="obrigatorio">*</span></label>
+                <input type="number" name="level" required placeholder="Insira o Level no seu Pokemon">
+            </div>
+        </fieldset>
+        
+        <div class="genero">
+            <legend>Escolha o gênero do seu Pokemon<span class="obrigatorio">*</span></legend>
+            <label><input type="radio" name="gender" value="macho" required> Macho</label>
+            <label><input type="radio" name="gender" value="femea" required> Fêmea</label>
+        </div>
+
+        <div class="nature">
+            <legend>Nature<span class="obrigatorio">*</span></legend>
+            <select class="opcao-nature" required>
+                <option selected disabled value="">Selecione</option>
+                <option>Hardy</option>
+                <option>Lonely</option>
+                <option>Brave</option>
+                <option>Adamant</option>
+                <option>Naughty</option>
+                <option>Bold</option>
+                <option>Docile</option>
+                <option>Relaxed</option>
+                <option>Impish</option>
+                <option>Lax</option>
+                <option>Timid</option>
+                <option>Hasty</option>
+                <option>Serious</option>
+                <option>Jolly</option>
+                <option>Naive</option>
+                <option>Modest</option>
+                <option>Mild</option>
+                <option>Quiet</option>
+                <option>Bashful</option>
+                <option>Rash</option>
+                <option>Calm</option>
+                <option>Gentle</option>
+                <option>Sassy</option>
+                <option>Careful</option>
+                <option>Quirky</option>
+            </select>
+        </div>
+
+        <div class="tipo">
+            <legend>Tipo<span class="obrigatorio">*</span></legend>
+            <div class="opcao-tipo">
+                <label><input type="checkbox" value="bug">Bug<img src="icons/Bug.svg"></label>
+                <label><input type="checkbox" value="dark">Dark<img src="icons/Dark.svg"></label>
+                <label><input type="checkbox" value="dragon">Dragon<img src="icons/Dragon.svg"></label>
+                <label><input type="checkbox" value="electric">Electric<img src="icons/Electric.svg"></label>
+                <label><input type="checkbox" value="fairy">Fairy<img src="icons/Fairy.svg"></label>
+                <label><input type="checkbox" value="fight">Fight<img src="icons/Fighting.svg"></label>
+                <label><input type="checkbox" value="fire">Fire<img src="icons/Fire.svg"></label>
+                <label><input type="checkbox" value="flying">Flying<img src="icons/Flying.svg"></label>
+                <label><input type="checkbox" value="ghost">Ghost<img src="icons/Ghost.svg"></label>
+                <label><input type="checkbox" value="grass">Grass<img src="icons/Grass.svg"></label>
+                <label><input type="checkbox" value="ground">Ground<img src="icons/Ground.svg"></label>
+                <label><input type="checkbox" value="ice">Ice<img src="icons/Ice.svg"></label>
+                <label><input type="checkbox" value="normal">Normal<img src="icons/Normal.svg"></label>
+                <label><input type="checkbox" value="poison">Poison<img src="icons/Poison.svg"></label>
+                <label><input type="checkbox" value="psychic">Psychic<img src="icons/Psychic.svg"></label>
+                <label><input type="checkbox" value="rock">Rock<img src="icons/Rock.svg"></label>
+                <label><input type="checkbox" value="steel">Steel<img src="icons/Steel.svg"></label>
+                <label><input type="checkbox" value="water">Water<img src="icons/Water.svg"></label>
+            </div>
+
+            <div class="div-botao">
+                <button type="submit" class="botao">Salvar Pokemon</button>
+            </div>
+        </div>
+
+    </form>
+ 
+</body>
+</html>
