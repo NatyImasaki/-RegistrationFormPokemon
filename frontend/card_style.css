@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Varela+Round&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 0 0px 0;
+    background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+
+#card-info-pokemon {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 100px 100px auto;
+    width: 50%; 
+    height: auto;
+    margin: 0 0 80px 0;
+    border: 3px solid #fa9d08;
+    border-radius: 10px;
+    padding: 36px;
+    background: #fdedd6;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+
+h1 {
+    font-family: 'Righteous', cursive;
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #14213D;
+    grid-column: 1;
+    grid-row: 1;
+    border-bottom: 3px solid #fa9d08;
+    height: 28px;
+}
+
+img {
+    height: 150px;
+    width: auto;
+    grid-column: 3 ;
+    justify-self: center;
+    align-self: start;
+    grid-row: 1 / span 3;
+}
+
+legend{
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #14213D;
+}
+
+p {
+    margin-left: 16px;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #fa9d08;
+}
+
+.nome {
+    grid-row: 1;
+    grid-column: 1;
+    align-self: end;
+    margin-top: 36px;
+    display: flex;
+}
+
+.apelido {
+    grid-row: 2;
+    grid-column: 1;
+    align-self: center;
+    display: flex;
+}
+
+.genero {
+    grid-row: 3;
+    grid-column: 1;
+    align-self: start;
+    display: flex;
+}
+
+.tipo {
+    grid-row: 1;
+    grid-column: 2;
+    align-self: end;
+    display: flex;
+}
+
+.level {
+    grid-row: 2;
+    grid-column: 2;
+    align-self: center;
+    display: flex;
+}
+
+.nature {
+    grid-row: 3;
+    grid-column: 2;
+    align-self: start;
+    display: flex;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+    margin-left: 5px; 
+    justify-self: start;  
+}

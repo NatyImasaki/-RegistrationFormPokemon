@@ -6,8 +6,9 @@
     <title>Cadastre seu Pokemon</title>
     <meta name="description" content="Com esta formulário você pode cadastrar todas as informações sobre seus Pokemon">
     <link rel="stylesheet" href="form_style.css">
+    <script src="https://unpkg.com/vue@3"></script>
 </head>
-<body> 
+<body id="app"> 
     
     <form>
         <div class="titulo">
@@ -18,7 +19,12 @@
         <fieldset class="grupo">
             <div class="campo">
                 <label for="nome">Nome<span class="obrigatorio">*</span></label>
-                <input type="text" name="nome" required placeholder="Insira o nome do seu Pokemon">
+                <input v-on:input="onTypeName" v-model="pokeName" type="text" name="nome" required placeholder="Insira o nome do seu Pokemon" autocomplete="off">
+                <div class="autocomplete" v-if="suggestionList.length > 0">
+                    <ul>
+                        <li v-for="name in suggestionList" @click="setName(name)">{{name}}</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="campo">
@@ -73,32 +79,18 @@
         <div class="tipo">
             <legend>Tipo<span class="obrigatorio">*</span></legend>
             <div class="opcao-tipo">
-                <label><input type="checkbox" value="bug">Bug<img src="icons/Bug.svg"></label>
-                <label><input type="checkbox" value="dark">Dark<img src="icons/Dark.svg"></label>
-                <label><input type="checkbox" value="dragon">Dragon<img src="icons/Dragon.svg"></label>
-                <label><input type="checkbox" value="electric">Electric<img src="icons/Electric.svg"></label>
-                <label><input type="checkbox" value="fairy">Fairy<img src="icons/Fairy.svg"></label>
-                <label><input type="checkbox" value="fight">Fight<img src="icons/Fighting.svg"></label>
-                <label><input type="checkbox" value="fire">Fire<img src="icons/Fire.svg"></label>
-                <label><input type="checkbox" value="flying">Flying<img src="icons/Flying.svg"></label>
-                <label><input type="checkbox" value="ghost">Ghost<img src="icons/Ghost.svg"></label>
-                <label><input type="checkbox" value="grass">Grass<img src="icons/Grass.svg"></label>
-                <label><input type="checkbox" value="ground">Ground<img src="icons/Ground.svg"></label>
-                <label><input type="checkbox" value="ice">Ice<img src="icons/Ice.svg"></label>
-                <label><input type="checkbox" value="normal">Normal<img src="icons/Normal.svg"></label>
-                <label><input type="checkbox" value="poison">Poison<img src="icons/Poison.svg"></label>
-                <label><input type="checkbox" value="psychic">Psychic<img src="icons/Psychic.svg"></label>
-                <label><input type="checkbox" value="rock">Rock<img src="icons/Rock.svg"></label>
-                <label><input type="checkbox" value="steel">Steel<img src="icons/Steel.svg"></label>
-                <label><input type="checkbox" value="water">Water<img src="icons/Water.svg"></label>
+                <label v-for="type in typeList"><input type="checkbox" value="{{type.id}}">{{type.type}}<img :src="'icons/' + type.type + '.svg'"></label>
             </div>
 
             <div class="div-botao">
                 <button type="submit" class="botao">Salvar Pokemon</button>
+                <a href="file:///Users/nataliayumi/Desktop/Programac%CC%A7a%CC%83o/Form%20Pokemon/card.html">Ir para Pokemon Cadastrados</a>
             </div>
+        
         </div>
 
     </form>
  
 </body>
+<script src="./script.js"></script>
 </html>
