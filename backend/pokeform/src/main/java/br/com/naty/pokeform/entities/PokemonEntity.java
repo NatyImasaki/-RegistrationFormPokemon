@@ -73,4 +73,17 @@ public class PokemonEntity {
     public void setTypes(Set<TypeEntity> types) {
         this.types = types;
     }
+
+    @Override
+    public String toString() {
+        return "PokemonEntity{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", nick='" + nick + '\'' +
+                ", level=" + level +
+                ", gender=" + gender +
+                ", nature='" + nature + '\'' +
+                ", types=" + types +
+                '}';
+    }
 }

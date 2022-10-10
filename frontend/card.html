@@ -6,96 +6,38 @@
     <title>Pokemon Cadastrados</title>
     <meta name="description" content="Com esta formulário você pode cadastrar todas as informações sobre seus Pokemon">
     <link rel="stylesheet" href="card_style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./script_card.js" async ></script>
 </head>
-<body> 
+<body id="app"> 
     
-    <div id="card-info-pokemon">
-        <h1>Pokemon #001</h1>
+    <div v-for="pokemon in pokemonList" id="card-info-pokemon">
+        <h1>Pokemon #{{pokemon.strId}}</h1>
         <img id="pic" src="https://img.pokemondb.net/sprites/lets-go-pikachu-eevee/normal/charizard.png">
         <div class="nome">
             <legend>Nome:</legend>
-            <p>Charizard</p>
+            <p>{{pokemon.name}}</p>
         </div>
         <div class="tipo">
             <legend>Tipo:</legend>
-            <img class="icon" src="icons/Fire.svg">
-            <img class="icon" src="icons/Flying.svg">
+            <img v-for="pokemonType in pokemon.types" class="icon" :src="'icons/' + pokemonType.type  + '.svg'">
         </div>
         <div class="apelido">
             <legend>Apelido:</legend>
-            <p>Foguinho</p>
+            <p>{{pokemon.nick}}</p>
         </div>
         <div class="level">
             <legend>Level:</legend>
-            <p>38</p>
+            <p>{{pokemon.level}}</p>
         </div>
         <div class="genero">
             <legend>Genero:</legend>
-            <p>Macho</p>
+            <p>{{pokemon.gender}}</p>
         </div>
         <div class="nature">
             <legend>Nature:</legend>
-            <p>Bold</p>
+            <p>{{pokemon.nature}}</p>
         </div>      
     </div>
-
-    <div id="card-info-pokemon">
-        <h1>Pokemon #002</h1>
-        <img id="pic" src="https://img.pokemondb.net/sprites/lets-go-pikachu-eevee/normal/gengar.png">     
-        <div class="nome">
-            <legend>Nome:</legend>
-            <p>Gengar</p>
-        </div>
-        <div class="tipo">
-            <legend>Tipo:</legend>
-            <img class="icon" src="icons/Ghost.svg">
-        </div>
-        <div class="apelido">
-            <legend>Apelido:</legend>
-            <p>Roxo</p>
-        </div>
-        <div class="level">
-            <legend>Level:</legend>
-            <p>40</p>
-        </div>
-        <div class="genero">
-            <legend>Genero:</legend>
-            <p>Macho</p>
-        </div>
-        <div class="nature">
-            <legend>Nature:</legend>
-            <p>Adamant</p>
-        </div>    
-    </div>
-
-    <div id="card-info-pokemon">
-        <h1>Pokemon #003</h1>
-        <img id="pic" src="https://img.pokemondb.net/sprites/lets-go-pikachu-eevee/normal/pikachu.png">
-        <div class="nome">
-            <legend>Nome:</legend>
-            <p>Pikachu</p>
-        </div>
-        <div class="tipo">
-            <legend>Tipo:</legend>
-            <img class="icon" src="icons/Electric.svg">
-        </div>
-        <div class="apelido">
-            <legend>Apelido:</legend>
-            <p>Chu</p>
-        </div>
-        <div class="level">
-            <legend>Level:</legend>
-            <p>80</p>
-        </div>
-        <div class="genero">
-            <legend>Genero:</legend>
-            <p>Femea</p>
-        </div>
-        <div class="nature">
-            <legend>Nature:</legend>
-            <p>Naive</p>
-        </div>    
-    </div>
- 
 </body>
 </html>
