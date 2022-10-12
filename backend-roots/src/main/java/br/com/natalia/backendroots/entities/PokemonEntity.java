@@ -1,13 +1,10 @@
-package br.com.naty.pokeform.entities;
+package br.com.natalia.backendroots.entities;
 
-import javax.persistence.*;
-import java.util.Set;
 
-@Entity
-@Table(name="POKEMON")
+import java.util.List;
+
 public class PokemonEntity {
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+
     private Long id;
 
     private Long pokeId;
@@ -17,8 +14,19 @@ public class PokemonEntity {
     private Character gender;
     private String nature;
 
-    @ManyToMany
-    private Set<TypeEntity> types;
+    public PokemonEntity(Long id, Long pokeId, String name, String nick, Short level,
+                         Character gender, String nature, List<TypeEntity> types) {
+        this.id = id;
+        this.pokeId = pokeId;
+        this.name = name;
+        this.nick = nick;
+        this.level = level;
+        this.gender = gender;
+        this.nature = nature;
+        this.types = types;
+    }
+
+    private List<TypeEntity> types;
 
     public Long getId() {
         return id;
@@ -76,11 +84,11 @@ public class PokemonEntity {
         this.nature = nature;
     }
 
-    public Set<TypeEntity> getTypes() {
+    public List<TypeEntity> getTypes() {
         return types;
     }
 
-    public void setTypes(Set<TypeEntity> types) {
+    public void setTypes(List<TypeEntity> types) {
         this.types = types;
     }
 

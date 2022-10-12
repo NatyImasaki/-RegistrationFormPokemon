@@ -7,7 +7,7 @@ const { createApp } = Vue
             }).then(data => {
                 this.pokemonList = data
                 this.pokemonList = this.pokemonList.map(pokemon => {
-                    pokemon.strId = pokemon.id.toString().padStart(3, '0')
+                    pokemon.strId = pokemon.pokeId.toString().padStart(3, '0')
                     pokemon.gender = pokemon.gender == 'm' ? 'Macho' : 'Fêmea'
                     return pokemon
                 })

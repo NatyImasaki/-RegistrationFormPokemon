@@ -13,7 +13,7 @@
     
     <div v-for="pokemon in pokemonList" id="card-info-pokemon">
         <h1>Pokemon #{{pokemon.strId}}</h1>
-        <img id="pic" src="https://img.pokemondb.net/sprites/lets-go-pikachu-eevee/normal/charizard.png">
+        <img id="pic" :src="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+ pokemon.pokeId + '.png'">
         <div class="nome">
             <legend>Nome:</legend>
             <p>{{pokemon.name}}</p>

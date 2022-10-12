@@ -52,6 +52,7 @@ const { createApp } = Vue
             
             getInfo(){
                 let obj = {
+                    pokeId: null,
                     name: this.pokeName,
                     nick: this.pokeNick,
                     level: this.pokeLv,
@@ -60,23 +61,34 @@ const { createApp } = Vue
                     types: this.typeList.filter(type => type.selected).map(type => {
                         delete type.selected
                         return type
-                    })
+                    })   
                 }
-                fetch("http://localhost:8080/pokemon/add",{
-                    method: "POST",
-                    body: JSON.stringify(obj),
-                    headers:  new Headers({
-                        "Content-Type": "application/json"
-                    })
-                }).then(response => {
-                    return response.text()
+
+
+                fetch("https://pokeapi.co/api/v2/pokemon/" + obj.name.toLowerCase() + "/").then(response => {
+                    return response.json()
                 }).then(data => {
-                    this.pokeName = ""
-                    this.pokeNick = ""
-                    this.pokeLv = ""
-                    this.pokeGender = ""
-                    this.pokeNature = ""
+                    obj.pokeId = data.id
+                    console.log(obj)
+
+                    fetch("http://localhost:8080/pokemon/add",{
+                        method: "POST",
+                        body: JSON.stringify(obj),
+                        headers:  new Headers({
+                            "Content-Type": "application/json"
+                        })
+                    }).then(response => {
+                        return response.text()
+                    }).then(data => {
+                        this.pokeName = ""
+                        this.pokeNick = ""
+                        this.pokeLv = ""
+                        this.pokeGender = ""
+                        this.pokeNature = ""
+                    })
                 })
+
+                
                 
             }
         }

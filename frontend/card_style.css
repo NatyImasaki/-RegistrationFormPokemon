@@ -42,7 +42,7 @@ h1 {
 }
 
 img {
-    height: 150px;
+    height: 200px;
     width: auto;
     grid-column: 3 ;
     justify-self: center;
