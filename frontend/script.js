@@ -69,7 +69,7 @@ const { createApp } = Vue
                     return response.json()
                 }).then(data => {
                     obj.pokeId = data.id
-                    console.log(obj)
+                    
 
                     fetch("http://localhost:8080/pokemon/add",{
                         method: "POST",

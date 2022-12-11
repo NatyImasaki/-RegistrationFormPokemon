@@ -11,6 +11,9 @@ const { createApp } = Vue
                     pokemon.gender = pokemon.gender == 'm' ? 'Macho' : 'Fêmea'
                     return pokemon
                 })
+                this.pokemonList.sort(function(a, b){
+                    return a.strId < b.strId ? -1 : a.strId > b.strId ? 1 : 0;
+                })
                 console.log(this.pokemonList)
             })
         },
@@ -20,6 +23,19 @@ const { createApp } = Vue
                 pokemonList: []
             }
             
+        },
+
+        methods: {
+            deletePokemon(id){
+                fetch('http://localhost:8080/pokemon/remove?id=' + id , {
+                    method: 'DELETE',
+                }).then(response => {
+                    alert("Pokemon removido com sucesso!")
+                    return response.text()
+                }).then(data => {
+                    window.location.reload()
+                })
+            }
         }
         
     }).mount('#app')

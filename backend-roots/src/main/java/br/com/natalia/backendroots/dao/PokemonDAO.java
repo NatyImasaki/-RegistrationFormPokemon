@@ -46,4 +46,44 @@ public class PokemonDAO {
 
         return pokemons;
     }
+
+    public void add(PokemonEntity pokemon) throws SQLException {
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pokeform","root", "919191nY#");
+        Statement stmt = conn.createStatement();
+        String query = "insert into pokemon (gender, level, name, nature, nick, poke_id) " +
+                "VALUES ('"+pokemon.getGender()+"', "+pokemon.getLevel()+ ", '"+pokemon.getName()+"', '"+pokemon.getNature()+"','"+pokemon.getNick()+"', "+pokemon.getPokeId()+")";
+        stmt.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
+
+        ResultSet rs = stmt.getGeneratedKeys();
+        rs.next();
+        int id = rs.getInt(1);
+
+        stmt.close();
+
+        for (int i = 0; i < pokemon.getTypes().size(); i++){
+            String typeQuery = "insert into pokemon_types (pokemon_entity_id, types_id) VALUES (?, ?)";
+            PreparedStatement pstmt = conn.prepareStatement(typeQuery);
+            pstmt.setInt(1, id);
+            pstmt.setLong(2, pokemon.getTypes().get(i).getId());
+            pstmt.execute();
+
+            pstmt.close();
+        }
+        conn.close();
+    }
+
+    public void remove(Long id) throws SQLException {
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pokeform","root", "919191nY#");
+        Statement stmt = conn.createStatement();
+        String query = "delete from pokemon_types where pokemon_entity_id = " + id;
+        stmt.executeUpdate(query);
+
+        stmt.close();
+
+        stmt = conn.createStatement();
+        query = "delete from pokemon where id = " + id;
+        stmt.executeUpdate(query);
+
+        stmt.close();
+    }
 }

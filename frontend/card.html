@@ -6,6 +6,7 @@
     <title>Pokemon Cadastrados</title>
     <meta name="description" content="Com esta formulário você pode cadastrar todas as informações sobre seus Pokemon">
     <link rel="stylesheet" href="card_style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./script_card.js" async ></script>
 </head>
@@ -37,7 +38,12 @@
         <div class="nature">
             <legend>Nature:</legend>
             <p>{{pokemon.nature}}</p>
-        </div>      
+        </div>   
+        <div class="div-botao">
+            <button @click="deletePokemon(pokemon.id)" class="botao" type="button"><span class="material-symbols-outlined">
+                delete
+                </span></button>
+        </div>   
     </div>
 </body>
 </html>

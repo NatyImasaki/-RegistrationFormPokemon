@@ -21,4 +21,10 @@ class PokemonController {
     public Iterable<PokemonEntity> listAll(){
         return repository.findAll();
     }
+
+    @DeleteMapping("/pokemon/remove")
+    public String deletePokemon(@RequestParam Long id){
+        repository.deleteById(id);
+        return "Pokemon removido";
+    }
 }

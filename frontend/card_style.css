@@ -65,6 +65,28 @@ p {
     color: #fa9d08;
 }
 
+.div-botao{
+    grid-row: 3;
+    grid-column: 3 / 3;
+    justify-self: end;
+}
+
+.botao {
+    background: none;
+    border: none;
+    color: #14213D;
+}
+
+.botao:hover{
+    cursor: pointer;
+    color: #fa9d08;
+   
+}
+
+.botao:active{
+    color: #14213D;
+}
+
 .nome {
     grid-row: 1;
     grid-column: 1;
